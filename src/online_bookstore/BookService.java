@@ -149,13 +149,18 @@ public class BookService {
 	}
 
 	public void balance() {
-		System.out.print("계좌번호: ");
-		String accountNumber = scan.next();
-		if(br.checkAccount(accountNumber)) {
-			MemberDTO member = br.checkBalance(accountNumber);
-			System.out.println(member.getAccountNumber() + "계좌의 잔액은 " + member.getBalance() + "원 입니다.");
+		System.out.print("아이디: ");
+		String memberId = scan.next();
+		System.out.print("비밀번호: ");
+		String memberPass = scan.next();
+		if(br.login(memberId, memberPass)) {
+			System.out.print("계좌번호: ");
+			String accountNumber = scan.next();
+			if(br.checkAccount(accountNumber)) {
+				MemberDTO member = br.checkBalance(accountNumber);
+				System.out.println(memberId + "님 계좌의 잔액은 " + member.getBalance() + "원 입니다.");
+			}
 		}
-		
 	}
 
 	public void buyCart() {
