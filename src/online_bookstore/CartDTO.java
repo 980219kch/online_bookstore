@@ -1,31 +1,29 @@
 package online_bookstore;
 
-public class ShoppingDTO {
-	private Long id;
+public class CartDTO {
+	private String memberId;
 	private String bookTitle;
 	private String bookPublisher;
-	private String bookAuthor;
 	private int bookPrice;
 	
-	public ShoppingDTO() {
+	public CartDTO() {
 		
 	}
 
-	public ShoppingDTO(Long id, String bookTitle, String bookPublisher, String bookAuthor, int bookPrice) {
+	public CartDTO(String memberId, String bookTitle, String bookPublisher, int bookPrice) {
 		super();
-		this.id = id;
+		this.memberId = memberId;
 		this.bookTitle = bookTitle;
 		this.bookPublisher = bookPublisher;
-		this.bookAuthor = bookAuthor;
 		this.bookPrice = bookPrice;
 	}
 
-	public Long getId() {
-		return id;
+	public String getMemberId() {
+		return memberId;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setMemberId(String memberId) {
+		this.memberId = memberId;
 	}
 
 	public String getBookTitle() {
@@ -44,14 +42,6 @@ public class ShoppingDTO {
 		this.bookPublisher = bookPublisher;
 	}
 
-	public String getBookAuthor() {
-		return bookAuthor;
-	}
-
-	public void setBookAuthor(String bookAuthor) {
-		this.bookAuthor = bookAuthor;
-	}
-
 	public int getBookPrice() {
 		return bookPrice;
 	}
@@ -62,9 +52,9 @@ public class ShoppingDTO {
 
 	@Override
 	public String toString() {
-		return "ShoppingDTO [id=" + id + ", bookTitle=" + bookTitle + ", bookPublisher=" + bookPublisher
-				+ ", bookAuthor=" + bookAuthor + ", bookPrice=" + bookPrice + "]";
+		return "CartDTO [memberId=" + memberId + ", bookTitle=" + bookTitle + ", bookPublisher=" + bookPublisher
+				+ ", bookPrice=" + bookPrice + "]";
 	}
-	
+		
 	
 }

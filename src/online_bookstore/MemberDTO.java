@@ -5,24 +5,25 @@ public class MemberDTO {
 	private String memberId;
 	private String memberPass;
 	private String memberName;
-	private String memberEmail;
 	private String memberAddress;
 	private String memberMobile;
+	private long balance;
+	private String accountNumber;
 	
 	public MemberDTO() {
 		
 	}
 
-	public MemberDTO(Long id, String memberId, String memberPass, String memberName, String memberEmail,
-			String memberAddress, String memberMobile) {
-		super();
+	public MemberDTO(Long id, String memberId, String memberPass, String memberName, String memberAddress,
+			String memberMobile, long balance, String accountNumber) {
 		this.id = id;
 		this.memberId = memberId;
 		this.memberPass = memberPass;
 		this.memberName = memberName;
-		this.memberEmail = memberEmail;
 		this.memberAddress = memberAddress;
 		this.memberMobile = memberMobile;
+		this.balance = balance;
+		this.accountNumber = accountNumber;
 	}
 
 	public Long getId() {
@@ -57,14 +58,6 @@ public class MemberDTO {
 		this.memberName = memberName;
 	}
 
-	public String getMemberEmail() {
-		return memberEmail;
-	}
-
-	public void setMemberEmail(String memberEmail) {
-		this.memberEmail = memberEmail;
-	}
-
 	public String getMemberAddress() {
 		return memberAddress;
 	}
@@ -81,12 +74,29 @@ public class MemberDTO {
 		this.memberMobile = memberMobile;
 	}
 
+	public long getBalance() {
+		return balance;
+	}
+
+	public void setBalance(long balance) {
+		this.balance = balance;
+	}
+
+	public String getAccountNumber() {
+		return accountNumber;
+	}
+
+	public void setAccountNumber(String accountNumber) {
+		this.accountNumber = accountNumber;
+	}
+
 	@Override
 	public String toString() {
 		return "MemberDTO [id=" + id + ", memberId=" + memberId + ", memberPass=" + memberPass + ", memberName="
-				+ memberName + ", memberEmail=" + memberEmail + ", memberAddress=" + memberAddress + ", memberMobile="
-				+ memberMobile + "]";
+				+ memberName + ", memberAddress=" + memberAddress + ", memberMobile=" + memberMobile + ", balance="
+				+ balance + ", accountNumber=" + accountNumber + "]";
 	}
+
 	
 	
 }	
