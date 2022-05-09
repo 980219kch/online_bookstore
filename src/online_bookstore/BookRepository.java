@@ -98,14 +98,14 @@ public class BookRepository {
 
 	public boolean buyCart(String memberId) {
 		boolean result = false;
-		for(int j = 0; j < memberList.size(); j++) { // 0 1
-			for(int k = 0; k < cartList.size(); k++) { // 0 1 2  3 4 5
+		for(int j = 0; j < memberList.size(); j++) { 
+			for(int k = cartList.size() - 1; k >= 0; k--) {
 				if(memberId.equals(memberList.get(j).getMemberId()) && memberId.equals(cartList.get(k).getMemberId())) {
 						if(memberList.get(j).getBalance() >= cartList.get(k).getBookPrice()) {
 							memberList.get(j).setBalance(memberList.get(j).getBalance() - cartList.get(k).getBookPrice());
 							BuyingDTO buying = new BuyingDTO(++id, memberId, cartList.get(k).getBookTitle());
 							buyingList.add(buying);
-							cartList.remove(k--);
+							cartList.remove(k);
 							result = true;
 						} else {
 							result = false;
